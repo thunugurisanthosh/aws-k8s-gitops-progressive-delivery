@@ -1,6 +1,6 @@
 replicaCount: 2
 image:
-  repository: REPLACE_WITH_ECR_URL
+  repository: 042032725211.dkr.ecr.ap-south-1.amazonaws.com/gitops-platform
   tag: latest
 service:
   type: ClusterIP
