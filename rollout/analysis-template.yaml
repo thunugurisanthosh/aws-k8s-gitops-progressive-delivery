@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AnalysisTemplate
+metadata: { name: health-check, namespace: gitops-demo }
+spec:
+  metrics:
+  - name: successful
+    interval: 30s
+    count: 3
+    successCondition: result == "200"
+    provider:
+      web:
+        url: http://gitops-demo.gitops-demo.svc.cluster.local/health
+        jsonPath: "{$.statusCode}"
